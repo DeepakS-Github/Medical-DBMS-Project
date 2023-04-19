@@ -1,4 +1,18 @@
-<!DOCTYPE html>
+
+<?php
+global $j;
+global $k;
+require "connection.php";
+$sql="select * from medical.medicine";
+$result= mysqli_query($con,$sql);
+$arr=[];
+$i=0;
+while($row=mysqli_fetch_assoc($result))
+{
+    $arr[$i]=array($row["Medid"],$row["Quantity"],$row["Expdate"],$row["Buydate"],$row["Price"],$row["Medname"],$row["Sid"]);
+    $i+=1;
+}
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -111,6 +125,7 @@
     
 <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-2xl xl:p-0 dark:bg-gray-800 dark:border-gray-700 mx-auto">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mt-32">
+    <? php for($j=0;$j<count($arr);$j++)?>
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
