@@ -22,15 +22,16 @@ if(isset($_POST['Email'])){
     $Email = $_POST['Email'];
 }
 
-$sql="INSERT INTO medical.supplier VALUES ('$Sname' ,  $Sid , '$Location', '$Phone' , '$Email')";
+$sql="INSERT INTO medical.supplier VALUES ('$Sname' ,  $Sid , '$Location', $Phone , '$Email')";
 if($con->query($sql)==true)
 {
     echo"sucessfully executed";
+    header('location:showsupplier.html')  
 }
 else{
     echo"error$sql <br> $con->error";
 }
-$sql1="Delete from medical.supplier where Sid=$Sid";//use javascript in it
+// $sql1="Delete from medical.supplier where Sid=$Sid";
 
 $con->close();
 ?>
