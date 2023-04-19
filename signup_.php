@@ -20,12 +20,6 @@ if(isset($_POST['password'])){
     $Password = $_POST['password'];
 }
 
-// $Id=1;
-// $Name="Gaurav";
-// $Sex="Male";
-// $Address="Haroli";
-// $Salary=60000;
-// $Password=1234;
 $sql="INSERT INTO medical.pharmacist VALUES ('$Name' ,$Id, '$Sex', '$Address' ,$Salary, $Password)";
 if($con->query($sql)==true)
 {

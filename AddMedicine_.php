@@ -32,11 +32,13 @@ $sql="INSERT INTO medical.medicine VALUES ($Medid ,  $Quantity , '$Expdate', '$B
 if($con->query($sql)==true)
 {
     echo"sucessfully executed";
+    header('location:showmedicine.html');
 }
 else{
     echo"error$sql <br> $con->error";
 }
-$sql1="Delete from medical.medicine where Medid=$medid";//use javascript in it
+
+// $sql1="Delete from medical.medicine where Medid=$medid";
 
 $con->close();
 ?>
