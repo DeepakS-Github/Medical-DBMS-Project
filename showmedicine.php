@@ -1,5 +1,5 @@
-
 <?php
+global $empty;
 global $j;
 global $k;
 require "connection.php";
