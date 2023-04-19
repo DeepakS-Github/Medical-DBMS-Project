@@ -5,6 +5,7 @@ global $k;
 require "connection.php";
 $sql="select * from medical.medicine";
 $result= mysqli_query($con,$sql);
+$q=mysqli_num_rows($result);
 $arr=[];
 $i=0;
 while($row=mysqli_fetch_assoc($result))
